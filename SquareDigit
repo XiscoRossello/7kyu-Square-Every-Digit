@@ -1,0 +1,18 @@
+public class SquareDigit {
+
+  public int squareDigits(int n) {
+    if (n == 0) {
+            return 0; // Manejar el caso donde n es 0, CODEWARS CABRONES
+        }
+
+    int digit;
+    StringBuilder solucion = new StringBuilder(); // Mucho mejor que String para muchas cosas
+      while (n > 0){
+        digit = n % 10;
+        digit = digit * digit;
+        solucion.insert(0, digit);
+        n = n / 10;
+        }
+    return Integer.parseInt(solucion.toString()); // Mejor que Integer.valueOf() pq parse.Int manda un int original 
+  }
+}
